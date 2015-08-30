@@ -82,6 +82,9 @@ class Vector2D:
     def norm(self):
         self = self.get_norm()
 
+    def norm_squared(self):
+        return (self.x*self.x+self.y*self.y)
+
     def angle_from_vector(self):
         angle=math.acos(self.get_norm()*Vector2D(0, 1))
         if self.x < 0:
@@ -90,3 +93,9 @@ class Vector2D:
 
     def to_tuple(self):
         return (self.x, self.y)
+
+    def rounded_int(self, vector):
+        return Vector2D(round(vector.x), round(vector.y))
+
+    def tuple_rounded(self):
+        return self.rounded_int(self).to_tuple()

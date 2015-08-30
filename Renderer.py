@@ -7,7 +7,7 @@ class Renderer:
         if type(body).__name__=='Polygon':
             draw_polygon(screen, move_all_points(body.points, body.rotation, body.scale, body.position))
         if type(body).__name__=='Circle':
-            pygame.draw.circle(screen, (255, 255, 255), body.position, body.radius)
+            pygame.draw.circle(screen, (255, 255, 255), body.position.tuple_rounded(), body.radius)
 def apply_rotation(vector, rotation):
     cos=math.cos(rotation)
     sin=math.sin(rotation)
